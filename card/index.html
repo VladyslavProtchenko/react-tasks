@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>cards</title>
+</head>
+<body>
+    <div class="container">
+        <div class="body">
+
+
+            <div class="header">Get awesome features, without extra charges</div>
+            <div class="header__text">The rise of mobile devices transforms the way we consume information entarely and the word's most relevant channels such as Facebook</div>
+            
+
+            <div class="demo__switcher">
+                <input class="demo__switch" id="switch1" type="checkbox">
+                <label for="switch1" class="switch-for"></label>
+            </div>  
+
+
+            <div class="cards">
+            
+                <div class="card card__active" id="card1">
+                    <div class="card__head">
+                        <div class="price"><span>$0</span>/month</div>
+                        <div class="card__header">Business Class</div>
+                        <div class="card__text">For small teams or offices</div>
+                    </div>
+                    <div class="card__content">
+                        <ul class="card__list">
+                            <li>Drag & Drop Builder</li>
+                            <li>1,000's of Templates</li>
+                            <li>Blog Support Tools</li>
+                            <li>eCommerce Store</li>
+                        </ul>
+                        <div class="card__button" id="card_btn">Start free trial</div>
+                    </div>
+                </div>
+
+                <div class="card" id="card2">
+                    <div class="card__head">
+                        <div class="price"><span>$99</span>/month</div>
+                        <div class="card__header">Pro Master</div>
+                        <div class="card__text">For best opportunities</div>
+                    </div>
+                    <div class="card__content">
+                        <ul class="card__list">
+                            <li>Drag & Drop Builder</li>
+                            <li>1,000's of Templates</li>
+                            <li>Blog Support Tools</li>
+                            <li>eCommerce Store</li>
+                        </ul>
+                        <div class="card__button" id="card_btn">Start free trial</div>
+                        <div class="card__demo">Or start 14 days trial</div>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="thanks">thanks for watching, Amigo</div>
+        </div>
+    </div>
+    <script>
+
+        let sw = document.querySelector('#switch1');
+        let card1 = document.querySelector('#card1');
+        let card2 = document.querySelector('#card2');
+        let btn = document.querySelectorAll('.card__button');
+        console.log(btn);
+
+        sw.addEventListener('click', ()=> {
+            if(card1.classList.contains('card__active')) {
+                card1.classList.remove("card__active");
+            } else {
+                card1.classList.add('card__active');
+            }
+            
+            if(card2.classList.contains('card__active')) {
+                card2.classList.remove("card__active");
+            } else {
+                card2.classList.add('card__active');
+            }
+        });
+        for(i=0; i<btn.length; i++) {
+            btn[i].onclick = function() {
+                alert('its okey, Bro! Go rest');
+            }
+        }
+        
+        
+        
+
+    </script>
+
+</body>
+</html>
