@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    padding: 0;
+}
+
+header {
+    color: rgb(104, 104, 104);
+    font-size: 24px;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    position: absolute;
+    top: 0;
+    box-shadow: 0 0 100px -20px rgb(165, 165, 165);
+}
+
+.container {
+    padding-top: 80px;
+    width: 1000px;
+    margin: 0 auto;
+}
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 0;
+    width: 1000px;
+
+    padding: 40px 40px 5px;
+    color: #949494;
+    font-size: 12px;
+    background-color: #0c0c0c;
+}
+.copy__head {
+    font-size: 14px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.menu {
+    display: flex;
+}
+.menu:hover {
+    cursor: pointer;
+
+}
+li:hover {
+    color: #3c3c3c;
+}
+ul {
+    list-style: none;
+}
+li {
+    margin-bottom: 5px;
+}
+a {
+    text-decoration: none;
+    color: #949494;
+}
+.media a:hover {
+    color: white;
+}
+.thanks {
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+    width: 100%;
+    letter-spacing: 5px;
+    font-size: 10px;
+}
+.thanks span {
+    color: black;
+    background-color: #fff;
+}
