@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Focus</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="focus">
+            <ul>
+                <li>F</li>
+                <li>O</li>
+                <li>C</li>
+                <li>U</li>
+                <li>S</li>
+            </ul>
+            <div class="thanks">thanks for your time, baby</div>
+            <ul>
+                <li>F</li>
+                <li>O</li>
+                <li>C</li>
+                <li>U</li>
+                <li>S</li>
+            </ul>
+        </div>
+        <div id="text">додайте будь який шрифт</div>
+        <input type="text"class="add__font" id="font">
+        <div class="me">Thanks for your time</div>
+    </div>
+    <script>
+        let input = document.querySelector('font');
+        document.addEventListener ('keyup', event => {
+            if( event.code == 'Enter') {
+                let font = document.querySelector('#font');
+                if(font.value) {
+                    alert('Ви додали новий шрифт:'+font.value);
+                    font.value = "";
+                } else {
+                    alert('зачем ты нажал Энтер просто так?');
+                }
+                
+            }
+        })
+    </script>
+</body>
+</html>
