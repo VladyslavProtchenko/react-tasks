@@ -63,8 +63,12 @@ form {
     margin-bottom: 30px;
     border: none;
 }
-
-.input.active, .input:focus {
+.input:focus {
+    opacity:1;
+    border: 1px solid black;
+    padding: 15px 30px;
+}
+.input_active {
     opacity:1;
     border: 1px solid black;
     padding: 15px 30px;
@@ -129,4 +133,11 @@ hr {
 a {
     color: white;
     text-decoration: none;
+}
+
+/* __________________Sign up___________________________________ */
+
+.hide {
+    display: none;
+    transition: 2s all ease;
 }

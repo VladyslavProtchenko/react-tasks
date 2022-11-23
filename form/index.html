@@ -13,19 +13,19 @@
         <form action="" id="form" onsubmit="return false">
         <div class="menu">
             <ul>
-                <li class="sign" id="sign_in">Sign in</li>
+                <li class="sign active" id="sign_in">Sign in</li>
                 <li id="sign_up" class="sign">Sign up</li>
             </ul>
         </div>
-            <label for="username" class="input__label active">Username</label>
+            <label for="username" class="input__label" id="label_name">Username</label>
             <input type="text" id="username" class="input">
 
-            <label for="password" class="input__label">Password</label>
+            <label for="password" class="input__label" id="label_pass">Password</label>
             <input type="password" id="password" class="input">
-            <div class="save">
+            <div class="save" id="save">
                 <input type="checkbox" id="check"><label for="check" class="check__label" id="check__label">Keep Me Signed In</label>
             </div>
-            <button type="submit" id="btn">Sing In</button>
+            <button type="submit" id="btn">Sing in</button>
             <hr>
             <div class="forgot__password" id="fp"><a href="#">Forgot password</a></div>
             
