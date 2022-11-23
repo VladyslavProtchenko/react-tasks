@@ -45,9 +45,11 @@ footer {
 }
 .menu:hover {
     cursor: pointer;
+    caret-color: #ff0000;
 
 }
 li:hover {
+    
     color: #3c3c3c;
 }
 ul {

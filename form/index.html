@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+
+    
+    <title>form</title>
+</head>
+<body>
+    <div class="container">
+        <form action="" id="form" onsubmit="return false">
+        <div class="menu">
+            <ul>
+                <li class="sign" id="sign_in">Sign in</li>
+                <li id="sign_up" class="sign">Sign up</li>
+            </ul>
+        </div>
+            <label for="username" class="input__label active">Username</label>
+            <input type="text" id="username" class="input">
+
+            <label for="password" class="input__label">Password</label>
+            <input type="password" id="password" class="input">
+            <div class="save">
+                <input type="checkbox" id="check"><label for="check" class="check__label" id="check__label">Keep Me Signed In</label>
+            </div>
+            <button type="submit" id="btn">Sing In</button>
+            <hr>
+            <div class="forgot__password" id="fp"><a href="#">Forgot password</a></div>
+            
+        
+    </form>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
