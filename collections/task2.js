@@ -23,139 +23,72 @@ const DB = {
     }
   };
 
- 
+function useCollection(data){
+    let path = DB.collections[data];
 
-
-function useCollection(enterData) {
-    let post = DB.collections.posts;
-    let comm = DB.collections.comments;
-
-    let arr =[];
-    for(key in DB.collections.posts) {
-        arr.push(key);
-    }
-    let count = arr.length;
-
-
-    try {
-        let data;
-        for(key in DB.collections) {
-            if(enterData === key) {
-                data = key;
-            }
-        }
-        if(!data) {
-            DB.collections[enterData] = {};
-            return DB.collections;
-        }
-
-        if(data === 'posts') {
-        let userPost = {
-            get(data){
+    let a = [];
+    let count = a.length;
+    for(key in path) a.push(key);  
+    let name =  `${data}_${count+1}`;
     
-                if(data ==='posts') {
-                    return post;
-                };
-    
-                for(key in post){
-                    if(key === data){
-                        let postItem = {
-                            id: key,
-                            name: post[key].name,
-                            text: post[key].text,
-                        }
-                        return postItem; 
-                    }
-                }
-    
-                    let x = 'I can\'t find posts';
-                    return  x ;
-                },
-            create(data){
-                console.log('create');
-                let y = 'posts_'+(count+1)
-                DB.collections.posts[y] = data;
+
+    if(DB.collections[data]) {
+        let path = DB.collections[data];
+
+        let crud ={
+            
+            create(item){
+                path[name] = item;
+                return;
+            },
+
+            delete(item) {
                 
-                return DB.collections.posts;
+                if(path[item]) {
+                   delete path[item];
+                }
             },
-            deleteOne(data){
-                console.log('delete')
-                for(key in post){
-                    if(data===key){
-                        delete post[key];
-                    }
-                }
-                return post;
+
+            edit(item, data) {
+                path[item] = data;
+                return;
             },
-            edit(item, data){
-                for(key in post) {
-                    if(item===key){
-                        post[key] = data;
-                    }
+
+            get(item){
+                if(path[item]) {
+                    return console.log(path[item]);
                 }
-                return post;
-            }
-        }
-        
-        return userPost;
-    } else if(data === 'comments') {
-        let userComments = {
-            get(data) {
-    
-                if(data === 'comments') {
-                    return comm;
-                }
-    
-                for(key in comm){
-                    if(data ===key){
-                        let commItem = {
-                            postId: comm[key].postId,
-                            text: comm[key].text,
-                        }
-                        return commItem;
-                    }
-                }
-    
-                let err = "not have yet"
-                return err;
+                return console.log(path);
             },
-            create(data){
-                let y = 'comments_'+(count+1)
-                comm[y] = data;
-                return comm;
-            },
-            deleteOne(data){
-                for(key in comm){
-                    if(data===key){
-                        delete comm[key];
-                    }
-                }
-                return comm;
-            },
-            edit(item, data){
-                for(key in comm) {
-                    if(item===key){
-                        comm[key] = data;
-                    }
-                }
-                return post;
-            }
         }
 
-            return userComments;
-    }
-    } catch (error) {
-        console.log('Ups!!!'+error);
-        // DB.collections[data] = {};
-        //     return DB.collections;
-    }
+        return crud;
+
+    } else {
+        DB.collections[data] = {"test":"test"};
+        return console.log(DB.collections);
+    } 
 };
 
 
+
+let editItem = {
+    name:"Petro",
+    age: 15,
+    status: "virgin",
+}
+let newEl = {
+    id: 'id',
+    value: 'test'
+};
+
+let posts_1 = 'posts_1';
 let x = useCollection('comments');
 
-console.log(x.get('comments_1'));
-
+x.create(newEl)
+x.edit('comments_1', editItem);
+x.delete('comments_2')
+x.get();
 
 
 
@@ -165,3 +98,4 @@ console.log(x.get('comments_1'));
 //   collection.create(data);
 //   collection.deleteOne('some-id');
 //   collection.edit('some-id', dataToEdit);
+
