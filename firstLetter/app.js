@@ -5,20 +5,18 @@ function get(word){
 
         for(i=0;i<word.length; i++){
 
-            if(/^[A-ZА-ЯЁ]+$/i.test(word[i])) {return console.log(word[i])}
+            if(/^[A-ZА-ЯЁ]+$/i.test(word[i])) {
+                return console.log(word[i])
+            }
         
         }
 
     } else if(Number(word[0])) {
-
-        return console.log('0-9');
-
+        console.log('0-9');
     } else {
-
-        return console.log(word[0]);
-
+        console.log(word[0]);
     }  
 }
 
 
- get('$%#ddsd')
+ get("''/symbol'")
